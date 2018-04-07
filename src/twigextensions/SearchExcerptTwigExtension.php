@@ -12,7 +12,7 @@ class SearchExcerptTwigExtension extends \Twig_Extension
      */
     public function getName()
     {
-        return 'Search Excerpt';
+        return 'searchExcerpt';
     }
 
     /**
@@ -23,11 +23,11 @@ class SearchExcerptTwigExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('searchexcerpt', [$this, 'searchexcerpt'])
+            new \Twig_SimpleFunction('searchExcerpt', [$this, 'searchExcerpt'])
         ];
     }
 
-    public function searchexcerpt($text, $term, $padding=20, $class='highlight')
+    public function searchExcerpt($text, $term, $padding=20, $class='highlight')
     {        
     	$start = max(0, stripos($text, $term) - $padding);
     	$end = min(strlen($text), $start + strlen($term) + $padding);

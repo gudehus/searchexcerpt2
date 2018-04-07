@@ -1,20 +1,37 @@
-# searchExcerpt plugin for Craft CMS
+# searchExcerpt module for Craft CMS 3.x
 
-Display only the part of a text which contains a given searchterm
+Display only the part of a text which contains a given searchterm and highlights it.
 
 ![Screenshot](resources/screenshots/plugin_logo.png)
 
 ## Installation
 
-To install searchExcerpt, follow these steps:
+To install the module, follow these instructions.
 
-1. Download & unzip the file and place the `searchexcerpt` directory into your `craft/plugins` directory
-2.  -OR- do a `git clone https://github.com/gudehus/searchexcerpt.git` directly into your `craft/plugins` folder.  You can then update it with `git pull`
-3.  -OR- install with Composer via `composer require gudehus/searchexcerpt`
-4. Install plugin in the Craft Control Panel under Settings > Plugins
-5. The plugin folder should be named `searchexcerpt` for Craft to see it.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
+First, you'll need to add the contents of the `app.php` file to your `config/app.php` (or just copy it there if it does not exist). This ensures that your module will get loaded for each request. The file might look something like this:
+```
+return [
+    'modules' => [
+        'search-excerpt-module' => [
+            'class' => \modules\searchexcerptmodule\SearchExcerptModule::class,
+        ],
+    ],
+    'bootstrap' => ['search-excerpt-module'],
+];
+```
+You'll also need to make sure that you add the following to your project's `composer.json` file so that Composer can find your module:
 
-searchExcerpt works on Craft 2.4.x and Craft 2.5.x.
+    "autoload": {
+        "psr-4": {
+          "modules\\searchexcerptmodule\\": "modules/searchexcerptmodule/src/"
+        }
+    },
+
+After you have added this, you will need to do:
+
+    composer dump-autoload
+ 
+ …from the project’s root directory, to rebuild the Composer autoload map. This will happen automatically any time you do a `composer install` or `composer update` as well.
 
 ## searchExcerpt Overview
 
@@ -22,7 +39,7 @@ Finds a given searchterm in a text and higlights it.
 
 ## Using searchExcerpt
 
-{{ craft.searchExcerpt.from(text, searchterm[[, padding][, class]]) }}
+{{ searchExcerpt(text, searchterm[[, padding][, class]]) }}
 
 where text ist the initial text
 searchterm is the term which should be higlighted
@@ -33,14 +50,9 @@ e.g.
 
 It’s true, this site doesn’t have a whole lot of content yet, but don’t worry. Our web developers have just installed the CMS, and they’re setting things up for the content editors this very moment. Soon Test.albatros-golf-berlin.de will be an oasis of fresh perspectives, sharp analyses, and astute opinions that will keep you coming back again and again.
 
-{{ craft.searchExcerpt.from(entry.body, 'of', 20) }} equals
+{{ searchExcerpt.from(entry.body, 'of', 20) }} equals
 
-… have a whole lot of content yet, but …
+… have a whole lot **of** content yet, but …
 
-## searchExcerpt Roadmap
-
-Some things to do, and ideas for potential features:
-
-* Release it
 
 Brought to you by [Jörg Gudehus](http://joerggudehus.de)
