@@ -1,0 +1,40 @@
+{
+    "name": "gudehus/searchexcerpt",
+    "description": "Finds a given searchterm in a text and higlights it.",
+    "type": "craft-plugin",
+    "version": "1.2",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "searchexcerpt"
+    ],
+    "support": {
+        "docs": "https://github.com/gudehus/searchexcerpt/blob/master/README.md",
+        "issues": "https://github.com/gudehus/searchexcerpt/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jörg Gudehus",
+            "homepage": "http://joerggudehus.de"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "gudehus\\searchexcerpt\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "SearchExcerpt",
+        "handle": "searchexcerpt",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/gudehus/searchexcerpt/master/CHANGELOG.md",
+        "class": "gudehus\\searchexcerpt\\SearchExcerpt"
+    }
+}
