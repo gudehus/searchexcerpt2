@@ -35,18 +35,21 @@ After you have added this, you will need to do:
 
 ## searchExcerpt Overview
 
-Finds a given searchterm in a text and higlights it.
+Finds a given searchterm in a text and highlights it. The text is shortened to 20 (changeable) characters before and after the highlight. If text is truncated an ellipsis (…) is added. 
 
 ## Using searchExcerpt
 
 {{ searchExcerpt(text, searchterm[[, padding][, class]]) }}
 
 where text ist the initial text
+
 searchterm is the term which should be higlighted
+
 padding is the (optional) amount of characters which are added to the left an right of the highlighted term
+
 class ist the (optional) css class of the <span> which enclosed the term
 	
-e.g.
+e.g. entry.body =
 
 It’s true, this site doesn’t have a whole lot of content yet, but don’t worry. Our web developers have just installed the CMS, and they’re setting things up for the content editors this very moment. Soon Test.albatros-golf-berlin.de will be an oasis of fresh perspectives, sharp analyses, and astute opinions that will keep you coming back again and again.
 
