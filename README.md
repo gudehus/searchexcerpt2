@@ -6,32 +6,28 @@ Display only the part of a text which contains a given searchterm and highlights
 
 ## Installation
 
-To install the module, follow these instructions.
+To install the plugin, follow these instructions.
 
-First, you'll need to add the contents of the `app.php` file to your `config/app.php` (or just copy it there if it does not exist). This ensures that your module will get loaded for each request. The file might look something like this:
-```
-return [
-    'modules' => [
-        'search-excerpt-module' => [
-            'class' => \modules\searchexcerptmodule\SearchExcerptModule::class,
-        ],
-    ],
-    'bootstrap' => ['search-excerpt-module'],
-];
-```
-You'll also need to make sure that you add the following to your project's `composer.json` file so that Composer can find your module:
+You have to create the folder where you want to include your plugins by yourself. There are no requirements how you name it. Let's say you want to create the folder plugins in your Craft folder, then you have to include the plugin in your composer.json like this
 
-    "autoload": {
-        "psr-4": {
-          "modules\\searchexcerptmodule\\": "modules/searchexcerptmodule/src/"
-        }
-    },
+"require": {
+   "php": ">=7.0.0",
+   ....
+   "namespace/pluginhandle": "your version",
+   "secondred/form-builder": "^1.0" (<--- example how it could look like)
+},
+"repositories": [
+{
+  "type": "path",
+  "url": "plugins/yourPluginFolderName"
+},
+{
+  "type": "path",   
+  "url": "plugins/form-builder" (<--- example how it could look like)
+},
+....
+Then you'll need access to your server via ssh and do composer update
 
-After you have added this, you will need to do:
-
-    composer dump-autoload
- 
- …from the project’s root directory, to rebuild the Composer autoload map. This will happen automatically any time you do a `composer install` or `composer update` as well.
 
 ## searchExcerpt Overview
 
@@ -39,7 +35,13 @@ Finds a given searchterm in a text and highlights it. The text is shortened to 2
 
 ## Using searchExcerpt
 
+You can use searchExcerpt as a function
+
 {{ searchExcerpt(text, searchterm[[, padding][, class]]) }}
+
+or as a Twig filter
+
+{{ text|searchExcerpt(searchterm[[, padding][, class]]) }}
 
 where text ist the initial text
 

@@ -27,6 +27,20 @@ class SearchExcerptTwigExtension extends \Twig_Extension
         ];
     }
 
+    public function getFilters()
+    {
+        $returnArray = array();
+        $methods = array(
+            'searchExcerpt',
+        );
+
+        foreach ($methods as $methodName) {
+            $returnArray[$methodName] = new \Twig_SimpleFilter($methodName, array($this, $methodName));
+        }
+
+        return $returnArray;
+    }
+
     public function searchExcerpt($text, $term, $padding=20, $class='highlight')
     {        
     	$start = max(0, stripos($text, $term) - $padding);
