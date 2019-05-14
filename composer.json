@@ -2,7 +2,7 @@
     "name": "gudehus/searchexcerpt",
     "description": "Finds a given searchterm in a text and higlights it.",
     "type": "craft-plugin",
-    "version": "1.3",
+    "version": "1.3.0",
     "keywords": [
         "craft",
         "cms",

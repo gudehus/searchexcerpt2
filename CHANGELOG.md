@@ -11,3 +11,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - Install documenation updated
 - Added twig filter notation
+## 1.3.0 - 2019-05-14
+### Added
+- Released to Plugin-Store
