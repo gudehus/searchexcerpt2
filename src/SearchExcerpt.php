@@ -2,7 +2,7 @@
 /**
  * SearchExcerpt plugin for Craft CMS 3.x
  *
- * Finds a given searchterm in a text and higlights it.
+ * Finds a given searchterm in a text and highlights it.
  *
  * @link      http://joerggudehus.de
  * @copyright Copyright (c) 2018 Jörg Gudehus
@@ -51,7 +51,7 @@ class SearchExcerpt extends Plugin
      *
      * @var string
      */
-    public $schemaVersion = '1.2';
+    public $schemaVersion = '1.3.1';
 
     // Public Methods
     // =========================================================================

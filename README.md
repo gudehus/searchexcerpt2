@@ -45,7 +45,7 @@ or as a Twig filter
 
 where text ist the initial text
 
-searchterm is the term which should be higlighted
+searchterm is the term which should be highlighted
 
 padding is the (optional) amount of characters which are added to the left an right of the highlighted term
 

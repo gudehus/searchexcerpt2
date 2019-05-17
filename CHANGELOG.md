@@ -14,3 +14,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## 1.3.0 - 2019-05-14
 ### Added
 - Released to Plugin-Store
+## 1.3.1 - 2019-05-17
+### Added
+- Minor typos
+- Fixed links to the craft 2 version
+- searchterm is highlighted as part of word (like the search in craft works)

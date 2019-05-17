@@ -55,7 +55,8 @@ class SearchExcerptTwigExtension extends \Twig_Extension
     		$excerpt = preg_replace('/\s\S*$/', '', $excerpt) . ' …';
     	
     	
-		$excerpt = preg_replace("/\b(".$term.")\b/i", "<span class='" . $class . "'>$1</span>", $excerpt);
+		$excerpt = preg_replace("/(".$term.")/i", "<span class='" . $class . "'>$1</span>", $excerpt);
+		//$excerpt = preg_replace("/\b(".$term.")\b/i", "<span class='" . $class . "'>$1</span>", $excerpt); with word boundary
 
 		return Template::raw($excerpt);
     }
