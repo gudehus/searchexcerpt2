@@ -55,7 +55,7 @@ e.g. entry.body =
 
 It’s true, this site doesn’t have a whole lot of content yet, but don’t worry. Our web developers have just installed the CMS, and they’re setting things up for the content editors this very moment. Soon Test.albatros-golf-berlin.de will be an oasis of fresh perspectives, sharp analyses, and astute opinions that will keep you coming back again and again.
 
-{{ searchExcerpt.from(entry.body, 'of', 20) }} equals
+{{ searchExcerpt(entry.body, 'of', 20) }} equals
 
 … have a whole lot **of** content yet, but …
 
